@@ -23,3 +23,11 @@ def preenche_frota(frota, nome, linha, coluna, orientacao, tamanho):
         frota[nome].append(p)
     
     return frota
+
+#EX 3
+def faz_jogada(tab, l, col):
+    if tab[l][col] == 1:
+        tab[l][col] = 'X'  
+    else:
+        tab[l][col] = '-' 
+    return tab
