@@ -31,3 +31,18 @@ def faz_jogada(tab, l, col):
     else:
         tab[l][col] = '-' 
     return tab
+
+#EX 4
+def posiciona_frota(frota):
+    tab = []
+    for i in range(10):
+        l = []
+        for j in range(10):
+            l.append(0)
+        tab.append(l)
+    for nome in frota:
+        for posicoes in frota[nome]:
+            for l, col in posicoes:
+                tab[l][col] = 1
+
+    return tab
