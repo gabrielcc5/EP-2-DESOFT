@@ -12,8 +12,8 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
     
     return l_posi 
 
-#EX 2
 
+#EX 2
 def preenche_frota(frota, nome, linha, coluna, orientacao, tamanho):
     p = define_posicoes(linha, coluna, orientacao, tamanho)
 
@@ -46,3 +46,19 @@ def posiciona_frota(frota):
                 tab[l][col] = 1
 
     return tab
+
+#EX 5
+def afundados(frota, tab):
+    nav_afundados = 0
+
+    for nome in frota:
+        for posicoes in frota[nome]:
+            afundado = True
+            for l, col in posicoes:
+                if tab[l][col] != 'X':
+                    afundado = False
+                    break
+            if afundado:
+                nav_afundados += 1
+
+    return nav_afundados
