@@ -82,14 +82,15 @@ def posicao_valida(frota, l, col, orient, tam):
     return True 
 
 #EX 8
-def posicoes_tabuleiros(tab_j, tab_op):
+def posicoesbuleiros(tabuleiro_jogador, tabuleiro_oponente):
     texto = ''
     texto += '   0  1  2  3  join([str7  8  9         0  1  2  3  4  5  6  7  8  9\n'
     texto += '_______________________________      _______________________________\n'
 
-    for linha in range(len(tab_j)):
-        jogador_info = '  '.join([str(item) for item in tab_j[linha]])
-        oponente_info = '  '.join([info if str(info) in 'X-' else '0' for info in tab_op[linha]])
+    for linha in range(len(tabuleiro_jogador)):
+        jogador_info = '  '.join([str(item) for item in tabuleiro_jogador[linha]])
+        oponente_info = '  '.join([info if str(info) in 'X-' else '0' for info in tabuleiro_oponente[linha]])
         texto += f'{linha}| {jogador_info}|     {linha}| {oponente_info}|\n'
+        
     return texto
-    
+
