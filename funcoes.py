@@ -62,3 +62,21 @@ def afundados(frota, tab):
                 nav_afundados += 1
 
     return nav_afundados
+
+#EX 6
+def posicao_valida(frota, l, col, orient, tam):
+    novas_posicoes = define_posicoes(l, col, orient, tam)
+
+    # valida limites do tabuleiro
+    for lin, col in novas_posicoes:
+        if lin < 0 or lin >= 10 or col < 0 or col >= 10:
+            return False
+
+    # valida sobreposicao com a frota existente
+    for nome in frota:
+        for pos in frota[nome]:
+            for lin, col in pos:
+                if [lin, col] in novas_posicoes:
+                    return False
+
+    return True 
